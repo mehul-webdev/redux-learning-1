@@ -17,7 +17,7 @@ Create a store folder inside your project and add an index.js file inside it.
 import { configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({
-reducer: {},
+    reducer: {},
 });
 
 The reducer object is where we add all slices (reducers) for our application.
@@ -31,18 +31,18 @@ Now, create a counterSlice.js file inside the store folder.
 import { createSlice } from '@reduxjs/toolkit';
 
 export const counterSlice = createSlice({
-name: 'counter',
-initialState: {
-counter: 0
-},
-reducers: {
-increment(state) {
-state.counter += 1; // Redux Toolkit uses Immer to allow state mutation.
-},
-decrement(state) {
-state.counter -= 1;
-}
-}
+    name: 'counter',
+    initialState: {
+        counter: 0
+    },
+    reducers: {
+        increment(state) {
+            state.counter += 1; // Redux Toolkit uses Immer to allow state mutation.
+        },
+        decrement(state) {
+            state.counter -= 1;
+        }
+    }
 });
 
 // Export actions for use in components
@@ -81,9 +81,9 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-<Provider store={store}>
-<App />
-</Provider>
+    <Provider store={store}>
+        <App />
+    </Provider>
 );
 
 📌 6. Using Redux State and Actions in Components
